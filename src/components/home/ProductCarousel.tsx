@@ -13,6 +13,7 @@ const ProductCarousel = () => {
       opts={{
         align: "start",
         loop: true,
+        watchDrag: false,
       }}
     >
       <CarouselContent>
