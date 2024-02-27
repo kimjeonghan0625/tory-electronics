@@ -46,7 +46,7 @@ const DrawerContent = React.forwardRef<
       )}
       {...props}
     >
-      <div className="w-[375px] flex flex-col items-center justify-center pt-[8px] px-[4px] pb-[16px] bg-[#fff]">
+      <div className="w-full flex flex-col items-center justify-center pt-[8px] px-[4px] pb-[16px] bg-[#fff]">
         <div className="w-[32px] h-[6px] shrink-0 bg-[#57585a] rounded-[99px]"></div>
       </div>
       {children}
