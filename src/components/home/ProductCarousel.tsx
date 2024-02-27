@@ -19,7 +19,9 @@ const ProductCarousel = () => {
         <CarouselItem>
           <Link to="products/single-light">
             <div className="w-full flex flex-col items-start justify-start rounded-[16px] overflow-hidden">
-              <div className="bg-[url(singlelight.jpg)] bg-cover bg-center self-stretch h-[309px] shrink-0"></div>
+              <div
+                className={`bg-[url('/singlelight.jpg')] bg-cover bg-center self-stretch h-[309px] shrink-0`}
+              ></div>
               <div className="self-stretch flex flex-col items-start justify-start gap-[16px] pt-[8px] px-[16px] pb-[24px] bg-[#1074bc]">
                 <div className="self-stretch text-[12px] font-['Noto_Sans_KR'] font-medium text-[#fff]">
                   Product 1
@@ -39,7 +41,9 @@ const ProductCarousel = () => {
         <CarouselItem>
           <Link to="products/duo-light">
             <div className="w-full flex flex-col items-start justify-start rounded-[16px] overflow-hidden">
-              <div className="bg-[url(duolight.jpg)] bg-cover bg-center self-stretch h-[309px] shrink-0"></div>
+              <div
+                className={`bg-[url('/duolight.jpg')] bg-cover bg-center self-stretch h-[309px] shrink-0`}
+              ></div>
               <div className="self-stretch flex flex-col items-start justify-start gap-[16px] pt-[8px] px-[16px] pb-[24px] bg-[#1074bc]">
                 <div className="self-stretch text-[12px] font-['Noto_Sans_KR'] font-medium text-[#fff]">
                   Product 2
