@@ -8,7 +8,7 @@ const Header = () => {
       <div className="flex-1 flex flex-row items-center justify-between py-[16px] px-[20px] bg-[#fff] md:px-[32px] 2xl:px-[44px]">
         <Link
           className="flex flex-row items-center justify-start gap-[8px]"
-          to={"/"}
+          to={""}
         >
           <img
             className="h-[40px] sm:h-[50px] xl:h-[55px] 2xl:h-[60px]"

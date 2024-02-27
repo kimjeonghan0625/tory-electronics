@@ -13,7 +13,7 @@ import Notice from "./pages/Notice";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/tory-electronics/",
     element: <RootLayout />,
     children: [
       {
