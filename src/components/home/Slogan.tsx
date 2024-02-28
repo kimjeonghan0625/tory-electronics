@@ -3,7 +3,7 @@ import Typewriter from "typewriter-effect";
 const Slogan = () => {
   return (
     <div className="w-full flex flex-col items-start justify-start gap-[8px]">
-      <div className="self-stretch flex flex-col items-start justify-start">
+      <div className="self-stretch flex flex-col items-start justify-start md:items-center">
         <Typewriter
           options={{
             strings: [
@@ -22,16 +22,16 @@ const Slogan = () => {
               "text-[28px] min-[420px]:text-[32px] min-[560px]:text-[36px] blinking-element text-slate-400",
           }}
         ></Typewriter>
-        <div className="self-stretch flex flex-row items-center justify-start">
-          <div className="text-[28px] min-[420px]:text-[32px] min-[560px]:text-[36px] font-['IBM_Plex_Sans_KR'] font-bold whitespace-nowrap gradient-primary">
+        <div className="self-stretch flex flex-row items-center justify-start md:justify-center">
+          <div className="md:text-center text-[28px] min-[420px]:text-[32px] min-[560px]:text-[36px] font-['IBM_Plex_Sans_KR'] font-bold whitespace-nowrap gradient-primary">
             토리전자 바닥조명
           </div>
         </div>
       </div>
-      <div className="self-stretch text-[14px] min-[420px]:text-[16px] min-[560px]:text-[18px] font-['Noto_Sans_KR'] text-[#57585a]">
-        저전력, 경량화, 개인화된 All-In-One 바닥조명.
+      <div className="self-stretch text-[14px] min-[420px]:text-[16px] min-[560px]:text-[18px] font-['Noto_Sans_KR'] text-[#57585a] md:text-center">
+        저전력, 경량화, 개인화된 All-In-One 바닥조명
         <br />
-        당신의 브랜드가 무엇이건 효율적으로 홍보해줍니다.
+        당신의 브랜드가 무엇이건 효율적으로 홍보해줍니다
       </div>
     </div>
   );
