@@ -1,7 +1,5 @@
-import { useState, EventHandler, ReactNode } from "react";
-import { AspectRatio } from "@radix-ui/react-aspect-ratio";
-import docsImage from "../../assets/copy-dynamic-premium.png";
 import calenderImage from "../../assets/calender-dynamic-premium.png";
+import docsImage from "../../assets/copy-dynamic-premium.png";
 import ProductCarousel2 from "./ProductCarousel2";
 
 const CardArea = () => {

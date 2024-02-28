@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
-import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import singleLightImage from "../../assets/singlelight11.png";
+import { Link } from "react-router-dom";
 import duoLightImage from "../../assets/duolight11.png";
-import { AspectRatio } from "@radix-ui/react-aspect-ratio";
+import singleLightImage from "../../assets/singlelight11.png";
+import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 
 const ProductCarousel2 = () => {
   return (
