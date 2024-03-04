@@ -1,11 +1,42 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import logoImage from "../assets/Screenshot from 2024-02-19 18-23-02 1101_18.png";
 import MenuDrawer from "./MenuDrawer";
+import { useScroll } from "@/hooks/useScroll";
+import { useEffect, useState } from "react";
 
 const Header = () => {
+  const location = useLocation();
+  const scrollPosition = useScroll();
+  const [headerStyle, setHeaderStyle] = useState(
+    location.pathname === "/tory-electronics exact"
+      ? {
+          backgroundColor: "#f9f9f9",
+        }
+      : {
+          backgroundColor: "#ffffff",
+        }
+  );
+
+  useEffect(() => {
+    if (location.pathname === "/tory-electronics") {
+      if (scrollPosition > 30) {
+        setHeaderStyle({
+          backgroundColor: "#ffffff",
+        });
+      } else {
+        setHeaderStyle({
+          backgroundColor: "#f9f9f9",
+        });
+      }
+    }
+  }, [scrollPosition, location]);
+
   return (
-    <div className="z-10 fixed w-full flex flex-row items-center justify-start">
-      <div className="flex-1 flex flex-row items-center justify-between py-[16px] px-[20px] bg-[#fff] md:px-[32px] 2xl:px-[44px]">
+    <div className="z-10 fixed left-1/2 transform -translate-x-1/2 w-full flex flex-row items-center justify-center max-w-7xl">
+      <div
+        className="flex-1 flex flex-row items-center justify-between py-[16px] px-[20px] md:px-[32px] 2xl:px-[44px]"
+        style={headerStyle}
+      >
         <Link
           className="flex flex-row items-center justify-start gap-[8px]"
           to={""}
