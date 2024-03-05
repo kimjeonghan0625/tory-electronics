@@ -40,7 +40,7 @@ const NoticeCarousel = ({ dataArray }: Props) => {
       <CarouselContent>
         {dataArray.map((data) => {
           return (
-            <CarouselItem className={data.id}>
+            <CarouselItem key={data.id}>
               <div className="self-stretch h-[77px] shrink-0 flex flex-col items-start justify-between">
                 <div className="self-stretch text-[16px] font-['Noto_Sans_KR'] text-[#000] line-clamp-2">
                   {data.title}
