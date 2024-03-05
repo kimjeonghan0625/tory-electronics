@@ -6,8 +6,10 @@ const RootLayout = () => {
   return (
     <>
       <Header />
-      <Outlet />
-      <Footer />
+      <div className="max-w-7xl mx-auto">
+        <Outlet />
+        <Footer />
+      </div>
     </>
   );
 };
