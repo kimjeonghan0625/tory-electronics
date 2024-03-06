@@ -9,8 +9,10 @@ export default function Home() {
       <div className="bg-[#fff] w-full">
         <div className="self-stretch flex-1 flex flex-col items-start justify-start pt-[55px]  pb-[38px] gap-8 px-[20px] md:px-[32px] ">
           <Slogan />
-          <CardArea />
-          <NoticeCarousel dataArray={noticeData} />
+          <div className="lg:flex gap-4">
+            <CardArea />
+            <NoticeCarousel dataArray={noticeData} />
+          </div>
         </div>
       </div>
       <div className="self-stretch flex-1 flex flex-col items-start justify-start pt-[55px]  pb-[38px] px-[20px] md:px-[32px] ">

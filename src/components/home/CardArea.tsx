@@ -4,7 +4,7 @@ import ProductCarousel2 from "./ProductCarousel2";
 
 const CardArea = () => {
   return (
-    <div className="sm:flex-row w-full flex flex-col items-start justify-center gap-[16px]">
+    <div className="sm:flex-row lg:flex-[2.5_1_0%] w-full flex flex-col items-start justify-center gap-[16px]">
       <div className="sm:flex-[1.4_1_0%]">
         <ProductCarousel2 />
       </div>
