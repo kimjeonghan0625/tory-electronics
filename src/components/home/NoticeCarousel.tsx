@@ -8,6 +8,7 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { IoAdd } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
 
 export interface NoticeData {
   id: string;
@@ -21,6 +22,7 @@ interface Props {
 }
 
 const NoticeCarousel = ({ dataArray }: Props) => {
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1280px)" });
   return (
     <Carousel
       orientation="vertical"
@@ -62,9 +64,11 @@ const NoticeCarousel = ({ dataArray }: Props) => {
                   <div className="self-stretch text-[16px] font-['Noto_Sans_KR'] font-medium text-[#000] line-clamp-2">
                     {data.title}
                   </div>
-                  <div className="self-stretch text-[16px] font-['Noto_Sans_KR'] text-[#000] line-clamp-6">
-                    {data.content}
-                  </div>
+                  {isBigScreen && (
+                    <div className="self-stretch text-[16px] font-['Noto_Sans_KR'] text-[#000] line-clamp-6">
+                      {data.content}
+                    </div>
+                  )}
                 </div>
 
                 <div className="text-[16px] font-['Noto_Sans_KR'] text-[#57585a] whitespace-nowrap">
