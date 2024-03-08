@@ -55,11 +55,11 @@ const NoticeCarousel = ({ dataArray }: Props) => {
         </div>
       </div>
       {/* 캐러셀 콘텐츠 */}
-      <CarouselContent className="h-[93px] lg:h-[338px]">
+      <CarouselContent className="h-[93px] xl:h-[338px]">
         {dataArray.map((data) => {
           return (
             <CarouselItem key={data.id}>
-              <div className="self-stretch h-[77px] lg:h-[322px] shrink-0 flex flex-col items-start justify-between">
+              <div className="self-stretch h-[77px] xl:h-[322px] shrink-0 flex flex-col items-start justify-between">
                 <div className="self-stretch flex flex-col items-start justify-start gap-[24px]">
                   <div className="self-stretch text-[16px] font-['Noto_Sans_KR'] font-medium text-[#000] line-clamp-2">
                     {data.title}
