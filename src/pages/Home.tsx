@@ -5,14 +5,12 @@ import { noticeData } from "@/data/noticeData";
 
 export default function Home() {
   return (
-    <div className="pt-[50px] w-full mx-auto max-w-[1280px] h-[1885px] flex flex-col items-start justify-start">
+    <div className="pt-[50px] w-full mx-auto max-w-[1280px] h-[1885px] flex flex-col items-center justify-start">
       <div className="bg-[#fff] w-full">
-        <div className="self-stretch flex-1 flex flex-col items-start justify-start pt-[55px]  pb-[38px] gap-8 px-[20px] md:px-[32px] ">
+        <div className="self-stretch flex-1 flex flex-col items-center justify-start pt-[55px]  pb-[38px] gap-8 px-[20px] md:px-[32px] ">
           <Slogan />
-          <div className="flex flex-col gap-6 xl:flex xl:flex-row">
-            <CardArea />
-            <NoticeCarousel dataArray={noticeData} />
-          </div>
+          <CardArea />
+          <NoticeCarousel dataArray={noticeData} />
         </div>
       </div>
       <div className="self-stretch flex-1 flex flex-col items-start justify-start pt-[55px]  pb-[38px] px-[20px] md:px-[32px] ">

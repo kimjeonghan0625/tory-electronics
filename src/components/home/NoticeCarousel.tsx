@@ -8,7 +8,6 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { IoAdd } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { useMediaQuery } from "react-responsive";
 
 export interface NoticeData {
   id: string;
@@ -22,7 +21,6 @@ interface Props {
 }
 
 const NoticeCarousel = ({ dataArray }: Props) => {
-  const isBigScreen = useMediaQuery({ query: "(min-width: 1280px)" });
   return (
     <Carousel
       orientation="vertical"
@@ -55,24 +53,19 @@ const NoticeCarousel = ({ dataArray }: Props) => {
         </div>
       </div>
       {/* 캐러셀 콘텐츠 */}
-      <CarouselContent className="h-[93px] xl:h-[338px]">
+      <CarouselContent className="h-[93px] lg:h-[40px]">
         {dataArray.map((data) => {
           return (
             <CarouselItem key={data.id}>
-              <div className="self-stretch h-[77px] xl:h-[322px] shrink-0 flex flex-col items-start justify-between">
-                <div className="self-stretch flex flex-col items-start justify-start gap-[24px]">
-                  <div className="self-stretch text-[16px] font-['Noto_Sans_KR'] font-medium text-[#000] line-clamp-2">
-                    {data.title}
-                  </div>
-                  {isBigScreen && (
-                    <div className="self-stretch text-[16px] font-['Noto_Sans_KR'] text-[#000] line-clamp-6">
-                      {data.content}
-                    </div>
-                  )}
+              <div className="self-stretch max-lg:h-[77px] lg:flex-row  shrink-0 flex flex-col items-start justify-between">
+                <div className="self-stretch text-[16px] font-['Noto_Sans_KR'] font-medium text-[#000] line-clamp-2 lg:line-clamp-1">
+                  {data.title}
                 </div>
 
-                <div className="text-[16px] font-['Noto_Sans_KR'] text-[#57585a] whitespace-nowrap">
-                  {data.date}
+                <div className="flex items-start justify-start lg:pl-2">
+                  <div className="text-[16px] font-['Noto_Sans_KR'] text-[#57585a] whitespace-nowrap">
+                    {data.date}
+                  </div>
                 </div>
               </div>
             </CarouselItem>
