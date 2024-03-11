@@ -37,14 +37,14 @@ const NoticeCarousel = ({ dataArray }: Props) => {
     >
       {/* 캐러셀 헤더 */}
       <div className="self-stretch flex flex-row items-center justify-between">
-        <div className="text-[16px] font-['Noto_Sans_KR'] font-bold gradient-primary whitespace-nowrap">
+        <div className="text-[16px] lg:text-[18px] font-['Noto_Sans_KR'] font-bold gradient-primary whitespace-nowrap">
           NOTICE
         </div>
         {/* 버튼 래퍼 */}
         <div className="flex flex-row items-start justify-start gap-[8px]">
           <div className="flex flex-row items-center justify-start gap-[8px]">
             <CarouselPrevious />
-            <div className="w-[1px] h-[12px] shrink-0 bg-[#ddd] rounded-[16px]"></div>
+            <div className="w-[1px] lg:w-[2px] h-[12px] lg-[14px] shrink-0 bg-[#ddd] rounded-[16px]"></div>
             <CarouselNext />
           </div>
           <Link to="notice">
@@ -58,12 +58,12 @@ const NoticeCarousel = ({ dataArray }: Props) => {
           return (
             <CarouselItem key={data.id}>
               <div className="self-stretch max-lg:h-[77px] lg:flex-row  shrink-0 flex flex-col items-start justify-between">
-                <div className="self-stretch text-[16px] font-['Noto_Sans_KR'] font-medium text-[#000] line-clamp-2 lg:line-clamp-1">
+                <div className="self-stretch text-[16px] lg:text-[18px] font-['Noto_Sans_KR'] font-medium text-[#000] line-clamp-2 lg:line-clamp-1">
                   {data.title}
                 </div>
 
                 <div className="flex items-start justify-start lg:pl-2">
-                  <div className="text-[16px] font-['Noto_Sans_KR'] text-[#57585a] whitespace-nowrap">
+                  <div className="text-[16px] lg:text-[18px] font-['Noto_Sans_KR'] text-[#57585a] whitespace-nowrap">
                     {data.date}
                   </div>
                 </div>

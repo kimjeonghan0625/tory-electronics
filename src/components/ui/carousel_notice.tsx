@@ -206,7 +206,7 @@ const CarouselPrevious = React.forwardRef<
 
   return (
     <button onClick={scrollPrev} disabled={!canScrollPrev}>
-      <IoChevronBack className="h-4 w-4" />
+      <IoChevronBack className="h-4 w-4 lg:h-[18px] lg:w-[18px]" />
       <span className="sr-only">Previous slide</span>
     </button>
   );
@@ -221,7 +221,7 @@ const CarouselNext = React.forwardRef<
 
   return (
     <button onClick={scrollNext} disabled={!canScrollNext}>
-      <IoChevronForward className="h-4 w-4" />
+      <IoChevronForward className="h-4 w-4 lg:h-[18px] lg:w-[18px]" />
       <span className="sr-only">Next slide</span>
     </button>
   );
