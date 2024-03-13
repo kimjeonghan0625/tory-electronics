@@ -48,11 +48,11 @@ const router = createBrowserRouter([
   },
 ]);
 
-window.addEventListener("popstate", function (event) {
+window.addEventListener("popstate", function () {
   // 새로고침이 발생했을 때 루트 주소로 리다이렉트
   window.location.href = "/tory-electronics/";
 });
-window.addEventListener("beforeunload", function (event) {
+window.addEventListener("beforeunload", function () {
   // 새로고침이 발생했을 때 루트 주소로 리다이렉트
   window.location.href = "/tory-electronics/";
 });
