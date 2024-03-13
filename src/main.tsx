@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, redirect, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Home from "./pages/Home";
 import RootLayout from "./layout/RootLayout";
@@ -48,14 +48,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-window.addEventListener("popstate", function () {
-  // 새로고침이 발생했을 때 루트 주소로 리다이렉트
-  return redirect("/tory-electronics");
-});
-window.addEventListener("beforeunload", function () {
-  // 새로고침이 발생했을 때 루트 주소로 리다이렉트
-  return redirect("/tory-electronics");
-});
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <RouterProvider router={router} />

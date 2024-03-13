@@ -6,7 +6,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel_notice";
 import useDataFetching from "@/hooks/useDataFetching";
-import { formatDate } from "@/utility-func/dateFormat";
+import { formatDate, sortNoticeData } from "@/utility-func/dateFormat";
 import Autoplay from "embla-carousel-autoplay";
 import { IoAdd } from "react-icons/io5";
 import { Link } from "react-router-dom";
@@ -22,6 +22,7 @@ const NoticeCarousel = () => {
   const { data, loading, error } = useDataFetching<NoticeData[]>(
     "/tory-electronics/noticeData.json"
   );
+  const sortedData = data && sortNoticeData(data);
 
   return (
     <Carousel
@@ -57,8 +58,8 @@ const NoticeCarousel = () => {
       {/* 캐러셀 콘텐츠 */}
       <CarouselContent className="h-[93px] lg:h-[40px]">
         {loading && <div>Loading...</div>}
-        {data &&
-          data.map((item) => {
+        {sortedData &&
+          sortedData.map((item) => {
             return (
               <CarouselItem key={item.id}>
                 <div className="self-stretch max-lg:h-[77px] lg:flex-row  shrink-0 flex flex-col items-start justify-between">
