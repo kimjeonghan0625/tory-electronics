@@ -5,6 +5,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel_notice";
+import useDataFetching from "@/hooks/useDataFetching";
+import { formatDate } from "@/utility-func/dateFormat";
 import Autoplay from "embla-carousel-autoplay";
 import { IoAdd } from "react-icons/io5";
 import { Link } from "react-router-dom";
@@ -16,11 +18,11 @@ export interface NoticeData {
   date: string;
 }
 
-interface Props {
-  dataArray: NoticeData[];
-}
+const NoticeCarousel = () => {
+  const { data, loading, error } = useDataFetching<NoticeData[]>(
+    "/tory-electronics/noticeData.json"
+  );
 
-const NoticeCarousel = ({ dataArray }: Props) => {
   return (
     <Carousel
       orientation="vertical"
@@ -54,23 +56,26 @@ const NoticeCarousel = ({ dataArray }: Props) => {
       </div>
       {/* 캐러셀 콘텐츠 */}
       <CarouselContent className="h-[93px] lg:h-[40px]">
-        {dataArray.map((data) => {
-          return (
-            <CarouselItem key={data.id}>
-              <div className="self-stretch max-lg:h-[77px] lg:flex-row  shrink-0 flex flex-col items-start justify-between">
-                <div className="self-stretch text-[16px] lg:text-[18px] font-['Noto_Sans_KR'] font-medium text-[#000] line-clamp-2 lg:line-clamp-1">
-                  {data.title}
-                </div>
+        {loading && <div>Loading...</div>}
+        {data &&
+          data.map((item) => {
+            return (
+              <CarouselItem key={item.id}>
+                <div className="self-stretch max-lg:h-[77px] lg:flex-row  shrink-0 flex flex-col items-start justify-between">
+                  <div className="self-stretch text-[16px] lg:text-[18px] font-['Noto_Sans_KR'] font-medium text-[#000] line-clamp-2 lg:line-clamp-1">
+                    {item.title}
+                  </div>
 
-                <div className="flex items-start justify-start lg:pl-2">
-                  <div className="text-[16px] lg:text-[18px] font-['Noto_Sans_KR'] text-[#57585a] whitespace-nowrap">
-                    {data.date}
+                  <div className="flex items-start justify-start lg:pl-2">
+                    <div className="text-[16px] lg:text-[18px] font-['Noto_Sans_KR'] text-[#57585a] whitespace-nowrap">
+                      {formatDate(item.date)}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </CarouselItem>
-          );
-        })}
+              </CarouselItem>
+            );
+          })}
+        {error && <div>Error: {error.message}</div>}
       </CarouselContent>
     </Carousel>
   );
