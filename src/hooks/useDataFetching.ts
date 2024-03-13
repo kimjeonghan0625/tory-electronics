@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 interface FetchResult<T> {
   data: T | null;
@@ -14,16 +14,14 @@ function useDataFetching<T>(path: string): FetchResult<T> {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setTimeout(async () => {
-            const response = await fetch(path);
-            if (!response.ok) {
-              throw new Error('Failed to fetch data');
-            }
-            const result: T = await response.json();
-            setData(result);
-            setLoading(false);
-            setError(null);
-          }, 3000);
+        const response = await fetch(path);
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const result: T = await response.json();
+        setData(result);
+        setLoading(false);
+        setError(null);
       } catch (error) {
         setError(error as Error);
         setLoading(false);
