@@ -48,6 +48,14 @@ const router = createBrowserRouter([
   },
 ]);
 
+window.addEventListener("popstate", function (event) {
+  // 새로고침이 발생했을 때 루트 주소로 리다이렉트
+  window.location.href = "/tory-electronics/";
+});
+window.addEventListener("beforeunload", function (event) {
+  // 새로고침이 발생했을 때 루트 주소로 리다이렉트
+  window.location.href = "/tory-electronics/";
+});
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
