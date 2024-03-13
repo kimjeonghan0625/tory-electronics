@@ -23,4 +23,23 @@ export function formatAndSortNoticeData(noticeDataArray: NoticeData[]): NoticeDa
     return formattedAndSortedData;
 }
 
+export function formatNoticeDate(date: string): string {
+    const parsedDate = new Date(date);
+    if (!isNaN(parsedDate.getTime())) {
+        return `${parsedDate.getFullYear()}.${(parsedDate.getMonth() + 1).toString().padStart(2, '0')}.${parsedDate.getDate().toString().padStart(2, '0')}`;
+    } else {
+        console.error('Invalid date:', date);
+        return date;
+    }
+}
+
+export function sortNoticeData(noticeDataArray: NoticeData[]): NoticeData[] {
+    return noticeDataArray.sort((a, b) => {
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+        return dateB.getTime() - dateA.getTime();
+    });
+}
+
+
 

@@ -17,13 +17,14 @@ import {
 } from "@/components/ui/pagination";
 import useDataFetching from "@/hooks/useDataFetching";
 import { NoticeData } from "../home/NoticeCarousel";
-import { formatAndSortNoticeData, formatDate } from "@/utility-func/dateFormat";
+import {  formatDate, sortNoticeData } from "@/utility-func/dateFormat";
 
 const NoticeTable = () => {
   const { data, loading, error } = useDataFetching<NoticeData[]>(
     "/tory-electronics/noticeData.json"
   );
-  const finalData = data && formatAndSortNoticeData(data);
+  const sortedData = data && sortNoticeData(data);
+  // const finalData = 
   return (
     <>
       <Table className="w-[90%] mx-auto">
@@ -39,8 +40,8 @@ const NoticeTable = () => {
               <TableCell>Loading ...</TableCell>
             </TableRow>
           )}
-          {finalData &&
-            finalData.map((post) => (
+          {sortedData &&
+            sortedData.map((post) => (
               <TableRow key={post.id}>
                 <TableCell>
                   <div className="font-medium line-clamp-1">{post.title}</div>
